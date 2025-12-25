@@ -1,0 +1,25 @@
+{
+    "short_name": "Your go to place for calculating medicine bill",
+    "name": "MedBudget",
+    "icons": [
+        {
+            "src": "MB_logo.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "MB_logo_192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "MB_logo_512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "oklch(55.3% 0.013 58.071)",
+    "background_color": "#e7e5e4"
+}

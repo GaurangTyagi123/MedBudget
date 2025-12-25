@@ -1,0 +1,7 @@
+@theme{
+    --color-mb-primary-200 : oklch(80.8% 0.114 19.571);
+    --color-mb-primary-500 : oklch(39.6% 0.141 25.723);
+    --color-mb-secondary-100 : oklch(92.3% 0.003 48.717);
+    --color-mb-secondary-200 : oklch(55.3% 0.013 58.071);
+    --color-mb-secondary-500 : oklch(44.4% 0.011 73.639);
+}
