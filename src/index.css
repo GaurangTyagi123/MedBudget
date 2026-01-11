@@ -1,15 +1,13 @@
 @import "tailwindcss";
 @import "./colours.css";
 @import "./font.css";
-@import url('../public/fonts/inter.ttf');
-*{
-  /* outline : 2px solid lime; */
-}
-html{
+
+html {
   font-size: 62.5%;
 }
-.inter{
-  font-family: inter sans-serif;
+
+.inter {
+  font-family: inter, sans-serif;
   font-weight: 400;
   font-size: 2rem;
 }

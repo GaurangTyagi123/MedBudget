@@ -16,7 +16,7 @@ type TableProps = {
     Somazina: number;
     "A-Z": number;
     "Mecofol Plus": number;
-
+    Rozustat: number;
   }>>;
   left?: boolean;
   totalCost?: number;
@@ -27,14 +27,14 @@ function Table({ data, columns, quantityLeft, setQuantityLeft, left, totalCost }
     <table className="min-h-full md:w-full w-mf table-auto text-center text-mb-secondary-500 tracking-widest divide-y border-b">
       <thead>
         <tr className="divide-x">
-          {columns.map((column: string,index:number) => (
+          {columns.map((column: string, index: number) => (
 
             <th className="p-5" key={index}>{column}</th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {data.map((row,index) => {
+        {data.map((row, index) => {
           const name = row.Name as medicineName;
           return <tr className={index % 2 ? "divide-x bg-stone-300" : "divide-x"} key={index}>
             <td className="p-5">{name}</td>

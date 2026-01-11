@@ -10,6 +10,7 @@ type medicineName = keyof NonNullable<{
   Somazina: 6;
   'A-Z': 6;
   'Mecofol Plus': 6;
+  Rozustat: 6;
 }>;
 const formatDate = (date: string) => {
   return new Intl.DateTimeFormat('en-CA', {
@@ -21,7 +22,7 @@ const formatDate = (date: string) => {
 const medicines: Array<Record<string, string | number>> = [
   {
     Name: 'Gord',
-    Price: 35,
+    Price: 40,
     perPack: 10,
     perDay: 1,
   },
@@ -39,7 +40,7 @@ const medicines: Array<Record<string, string | number>> = [
   },
   {
     Name: 'Covid',
-    Price: 30,
+    Price: 35,
     perPack: 15,
     perDay: 2,
   },
@@ -57,7 +58,12 @@ const medicines: Array<Record<string, string | number>> = [
   },
   {
     Name: 'Mecofol Plus',
-    Price: 72,
+    Price: 70,
+    perPack: 10,
+    perDay: 1,
+  }, {
+    Name: 'Rozustat',
+    Price: 260,
     perPack: 10,
     perDay: 1,
   },
@@ -74,6 +80,7 @@ function Main() {
     Somazina: 6,
     'A-Z': 6,
     'Mecofol Plus': 6,
+    Rozustat: 6
   });
   const [total, setTotal] = useState<
     Array<{
@@ -96,7 +103,7 @@ function Main() {
     });
     setTotal(totalArray);
   };
-  const totalCost = total ? total.reduce((val, med) => med.Price + val, 0) : 0;
+  const totalCost = total ? total.reduce((val: number, med: { Name: medicineName; needed: number; Price: number; }) => med.Price + val, 0) : 0;
   return (
     <main className="min-w-full min-h-screen px-10 flex flex-col flex-wrap gap-10 self-start items-center justify-evenly">
       <Table
