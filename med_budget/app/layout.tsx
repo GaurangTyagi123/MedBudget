@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./_components/Header";
 import UserProvider from "./_providers/UserProvider";
 import { Toaster } from "react-hot-toast";
+import { ERROR_DURATION, SUCCESS_DURATION } from "./_utils/globalConstants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,10 +34,10 @@ export default function RootLayout({
               padding: "5px"
             }} toastOptions={{
               success: {
-                duration: 3000
+                duration: SUCCESS_DURATION
               },
               error: {
-                duration: 5000
+                duration: ERROR_DURATION
               }
             }} />
             <Header />

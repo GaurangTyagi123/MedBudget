@@ -30,7 +30,6 @@ export const calculateTotal = (
                 Price: number;
             }> => {
     const totalArray = medicines.map((medicine, index) => {
-        // const { perDay, perPack, Price } = medicine;
         const perDay = !index
             ? medicine.quantityPerDose
             : medicine[`quantityPerDose-${index}`];

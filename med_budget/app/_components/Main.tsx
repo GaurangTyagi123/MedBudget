@@ -8,6 +8,7 @@ import { useUserContext } from '../_providers/UserProvider';
 import { createHash, parseData } from '../_utils/calculationFns';
 import Modal from './Modal';
 import toast from 'react-hot-toast';
+import { NUM_COLS_INFO } from '../_utils/globalConstants';
 
 function Main() {
     const { medicineData, patientName, setMedicineData } = useUserContext();
@@ -37,7 +38,7 @@ function Main() {
 
     useEffect(() => {
         if (medicineData.length) {
-            const parsedResult = parseData(medicineData, 4);
+            const parsedResult = parseData(medicineData, NUM_COLS_INFO);
             //eslint-disable-next-line
             setData(parsedResult);
         }

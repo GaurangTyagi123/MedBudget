@@ -2,6 +2,7 @@ import { TableProps } from "@/types";
 import { FieldValues, useForm } from "react-hook-form";
 import { calculateTotal, formatCurrency, parseData } from "../_utils/calculationFns";
 import { useUserContext } from "../_providers/UserProvider";
+import { NUM_COLS_INFO } from "../_utils/globalConstants";
 
 
 function Table({
@@ -20,7 +21,7 @@ function Table({
     const { medicineData } = useUserContext();
 
     function onSubmit(data: FieldValues) {
-        const result = calculateTotal(parseData(medicineData, 4), data, days);
+        const result = calculateTotal(parseData(medicineData, NUM_COLS_INFO), data, days);
         setTotal?.(result);
         setShow?.(true);
     };
