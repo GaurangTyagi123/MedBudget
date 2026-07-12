@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme light {
+  --color-mb-primary-200: oklch(80.8% 0.114 19.571);
+  --color-mb-primary-500: oklch(39.6% 0.141 25.723);
+  --color-mb-secondary-100: oklch(92.3% 0.003 48.717);
+  --color-mb-secondary-200: oklch(55.3% 0.013 58.071);
+  --color-mb-secondary-500: oklch(44.4% 0.011 73.639);
+}
+
+.form_input {
+  @apply outline outline-mb-primary-500 focus:outline-mb-primary-500 rounded-md text-center w-full h-[40%];
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+/* * {
+  outline: 2px solid lime;
+} */
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
