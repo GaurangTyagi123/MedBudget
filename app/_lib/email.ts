@@ -16,7 +16,7 @@ export default class Email {
       },
     });
   }
-  sendMail() {
+  async sendMail() {
     const templateString = readFileSync(
       path.join(process.cwd(), 'app', '_lib', 'templates', 'notification.html'),
       { encoding: 'utf-8' },
@@ -32,7 +32,9 @@ export default class Email {
       subject: 'Order your medicines',
       html: source,
     };
-    this.newTransporter().sendMail(mailOptions, (err) => {
+    const transporter = this.newTransporter();
+    await transporter.verify();
+    await transporter.sendMail(mailOptions, (err) => {
       console.log(err?.message);
     });
   }
