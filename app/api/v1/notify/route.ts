@@ -12,12 +12,12 @@ export async function GET() {
       },
     });
   else {
-    data.forEach((patient) => {
+    data.forEach(async (patient) => {
       const today = new Date(Date.now()).toLocaleDateString();
       const lastOrderedDate = new Date(patient.nextOrder).toLocaleDateString();
       if (today == lastOrderedDate) {
         try {
-          new Email(patient.email).sendMail();
+          await new Email(patient.email).sendMail();
         } catch (error: unknown) {
           console.log(error);
         }

@@ -34,7 +34,7 @@ export default class Email {
     };
     const transporter = this.newTransporter();
     await transporter.verify();
-    await transporter.sendMail(mailOptions, (err) => {
+    return transporter.sendMail(mailOptions, (err) => {
       console.log(err?.message);
     });
   }
