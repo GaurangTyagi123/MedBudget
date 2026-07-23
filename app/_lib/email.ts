@@ -14,7 +14,7 @@ export default class Email {
     const templateCompile = Handlebars.compile(templateString);
     const source = templateCompile({
       name: this.to,
-      dashboardUrl: 'http://localhost:3000/order',
+      dashboardUrl: `${process.env.NEXT_DOMAIN}/order`,
     });
     const mailOptions = {
       from: 'gaurangtyagi@gaurang.work',
