@@ -44,5 +44,5 @@ type UserContextType = {
 }
 type ModalContextType = {
     showModal: boolean
-    setShowModal : React.Dispatch<React.SetStateAction<boolean>>
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 }

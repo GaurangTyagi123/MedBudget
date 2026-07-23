@@ -9,10 +9,10 @@ function Navbar() {
     return (
         <nav className="min-h-20 w-full bg-mb-primary-500 shadow-xl rounded-b-2xl flex-row flex items-center justify-evenly relative print:hidden">
             <ul className="flex w-[33%] items-center justify-center  text-white text-[.8rem] md:text-[1rem]  tracking-wider capitalize space-x-2 divide-x-2">
-                <li className=" cursor-pointer w-28 h-10 grid place-items-center text-md  hover:bg-red-950 text-center ">
+                <li title="Recieve Notification" className=" cursor-pointer w-28 h-10 grid place-items-center text-md  hover:bg-red-950 text-center ">
                     <Link href={"/notification"} >Be Notified</Link>
                 </li> 
-                <li className="cursor-pointer w-28 h-10 grid place-items-center text-md hover:bg-red-950 text-center" >
+                <li title="Update Medicine Information" className="cursor-pointer w-28 h-10 grid place-items-center text-md hover:bg-red-950 text-center" >
                     <Link href={"/info/update"}>Update Info</Link>
                 </li> 
             </ul>

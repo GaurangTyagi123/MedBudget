@@ -9,8 +9,8 @@ export async function storeUser(formData: FormData) {
         const { data: user, error: userError } = await supabase
             .from('Patient')
             .select('*')
-            .eq('patientName', data.patientName)
-            .single();
+            .eq('email', data.email)
+        .maybeSingle();
         if (userError) {
             return notFound();
         }
@@ -28,19 +28,19 @@ export async function storeUser(formData: FormData) {
                 return notFound();
             }
         }
-    } catch {
-        throw new Error("There was an error")
+    } catch (error: unknown) {
+        console.log(error instanceof Error ? error?.message : "There was an error")
     }
 
     redirect('/order');
 }
-export async function storeOrderDetails(days: number, patientName: string) {
+export async function storeOrderDetails(days: number, email: string, patientName:string) {
     const orderDate = new Date(Date.now() + days * 24 * 60 * 60 * 1000);
     try {
         const { data: user, error: userError } = await supabase
             .from('Patient')
             .select('*')
-            .eq('patientName', patientName)
+            .eq('email', email)
             .maybeSingle();
 
         if (userError) {
@@ -49,6 +49,7 @@ export async function storeOrderDetails(days: number, patientName: string) {
             const { error } = await supabase.from('Patient').insert([
                 {
                     patientName,
+                    email,
                     nextOrder : orderDate
                 },
             ]);
@@ -65,6 +66,6 @@ export async function storeOrderDetails(days: number, patientName: string) {
             }
         }
     } catch{
-        throw new Error('There was an error');
+        console.log("there was an error");
     }
 }

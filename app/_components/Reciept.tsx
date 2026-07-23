@@ -2,6 +2,7 @@ import { TableProps } from "@/types";
 import { createHash, formatCurrency } from "../_utils/calculationFns";
 import { storeOrderDetails } from "../_lib/actions";
 import toast from "react-hot-toast";
+import { useUserContext } from "../_providers/UserProvider";
 
 
 function Reciept({
@@ -12,10 +13,14 @@ function Reciept({
     setShow,
     totalCost = 1,
 }: TableProps) {
+    const { email } = useUserContext();
     async function receiptHandler() {
         if (patientName) {
             try {
-                await storeOrderDetails(days, patientName!);
+                if (email) {
+                    console.log(email);
+                    await storeOrderDetails(days,email, patientName);
+                }
                 const hash = await createHash(patientName)
                 localStorage.setItem(`order-${hash}`, JSON.stringify(data));
                 toast.success("Order details stored!");

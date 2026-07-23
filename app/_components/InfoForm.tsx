@@ -305,6 +305,7 @@ function InfoForm({
                         },
                     )}
                     <button
+                        title='store info in the browser'
                         type="submit"
                         className="my-3 w-32 h-10 rounded-md text-white cursor-pointer  bg-mb-primary-500"
                     >
@@ -313,6 +314,7 @@ function InfoForm({
                 </form>
                 <div className="absolute right-5">
                     <button
+                        title='Add a new row'
                         className=" mr-5 bg-mb-primary-500 h-12 w-12 rounded-full cursor-pointer text-white shadow-md shadow-mb-secondary-500 transition-transform hover:translate-y-0.5"
                         onClick={() => {
                             setNumOfFields((prev) => prev + 1);
@@ -321,6 +323,7 @@ function InfoForm({
                         +
                     </button>
                     <button
+                        title='Remove last row'
                         className=" mr-5 bg-mb-primary-500 h-12 w-12 rounded-full cursor-pointer text-white shadow-md shadow-mb-secondary-500 transition-transform hover:translate-y-0.5"
                         onClick={() => {
                             setNumOfFields((prev) => {

@@ -36,8 +36,9 @@ function Calendar({ days, setDays, ref, formatDate }: CalendarProps) {
                 onClick={submitHandler}
                 type="submit"
                 className="bg-mb-primary-500 rounded-xl min-w-fit px-10 py-5 text-mb-secondary-100 text-center tracking-wide shadow-2xl shadow-mb-secondary-500 transition-transform active:translate-y-0.5 hover:translate-y-[-0.5px] cursor-pointer"
+                title={`calculate projected price for ${days} days`}
             >
-                Calculate for {days || 1} days
+                {`calculate for ${days} ${days > 1 ? 'days' : 'day'}`}
             </button>
         </div>
     )

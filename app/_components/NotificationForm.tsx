@@ -5,18 +5,25 @@ import { storeUser } from "../_lib/actions";
 import { useUserContext } from "../_providers/UserProvider"
 // import useLocalStorage from "../hooks/useLocalStorage";
 import { useEffect } from "react";
+import { createHash } from "../_utils/calculationFns";
 
 function NotificationForm() {
     const { patientName, setEmail, email } = useUserContext();
     useEffect(() => {
-        setEmail(localStorage.getItem(`email-${patientName}`) ?? "");
+        async function getEmail(patientName:string) {
+            const hash = await createHash(patientName);
+            setEmail(localStorage.getItem(`email-${hash}`) ?? "");
+        }
+        getEmail(patientName);
 
     },[setEmail,patientName])
 
     return (
-        <form className='m-auto h-[70vh] flex flex-col items-center justify-evenly' action={(formData:FormData) => {
+        <form className='m-auto h-[70vh] flex flex-col items-center justify-evenly' action={async (formData: FormData) => {
             storeUser(formData);
-            localStorage.setItem(`email-${patientName}`,String(formData.get("email")))
+            const hash = await createHash(patientName)
+            setEmail(email);
+            localStorage.setItem(`email-${hash}`,String(formData.get("email")))
             toast.success("Email verified")
         }}>
             <h1 className="text-4xl uppercase tracking-widest font-extralight">Verify your Email</h1>

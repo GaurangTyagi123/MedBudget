@@ -7,7 +7,7 @@ function Logo() {
             <div className="w-15 h-15 rounded-4xl relative overflow-clip">
                 <Image src="/MB_logo.ico" alt="MedBudget Logo" fill objectFit="contain" />
             </div>
-            <Link href="/" className="text-mb-secondary-100 tracking-widest capitalize">MedBudget</Link>
+            <Link href="/" title="Go to home page" className="text-mb-secondary-100 tracking-widest capitalize">MedBudget</Link>
         </div>
     )
 }
