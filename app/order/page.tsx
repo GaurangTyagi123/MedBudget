@@ -1,9 +1,9 @@
-import Main from "../_components/Main";
+import Main from '../_components/Main'
 
 export default function Home() {
-    return (
-        <div className="min-w-screen flex item-center justify-center">
-            <Main />
-        </div>
-    );
+  return (
+    <div className="min-w-screen flex item-center justify-center">
+      <Main />
+    </div>
+  )
 }

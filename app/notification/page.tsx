@@ -1,9 +1,7 @@
-import NotificationForm from "../_components/NotificationForm"
+import NotificationForm from '../_components/NotificationForm'
 
 function Notification() {
-  return (
-   <NotificationForm/>
-  )
+  return <NotificationForm />
 }
 
 export default Notification

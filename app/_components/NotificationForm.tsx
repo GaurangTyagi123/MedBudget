@@ -1,39 +1,60 @@
-"use client"
+'use client'
 
-import toast from "react-hot-toast";
-import { storeUser } from "../_lib/actions";
-import { useUserContext } from "../_providers/UserProvider"
+import toast from 'react-hot-toast'
+import { storeUser } from '../_lib/actions'
+import { useUserContext } from '../_providers/UserProvider'
 // import useLocalStorage from "../hooks/useLocalStorage";
-import { useEffect } from "react";
-import { createHash } from "../_utils/calculationFns";
+import { useEffect } from 'react'
+import { createHash } from '../_utils/calculationFns'
 
 function NotificationForm() {
-    const { patientName, setEmail, email } = useUserContext();
-    useEffect(() => {
-        async function getEmail(patientName:string) {
-            const hash = await createHash(patientName);
-            setEmail(localStorage.getItem(`email-${hash}`) ?? "");
-        }
-        getEmail(patientName);
+  const { patientName, setEmail, email } = useUserContext()
+  useEffect(() => {
+    async function getEmail(patientName: string) {
+      const hash = await createHash(patientName)
+      setEmail(localStorage.getItem(`email-${hash}`) ?? '')
+    }
+    getEmail(patientName)
+  }, [setEmail, patientName])
 
-    },[setEmail,patientName])
-
-    return (
-        <form className='m-auto h-[70vh] flex flex-col items-center justify-evenly' action={async (formData: FormData) => {
-            storeUser(formData);
-            const hash = await createHash(patientName)
-            setEmail(email);
-            localStorage.setItem(`email-${hash}`,String(formData.get("email")))
-            toast.success("Email verified")
-        }}>
-            <h1 className="text-4xl uppercase tracking-widest font-extralight">Verify your Email</h1>
-            <div className="flex flex-col items-center justify-center gap-y-4">
-                <input type="email" name="email" id="email" placeholder="Enter your email" defaultValue={email} className="text-center w-80 h-10 outline outline-mb-primary-200 focus:outline-mb-primary-500 rounded-lg" />
-                <input type="hidden" name="patientName" defaultValue={patientName} onChange={(e)=>setEmail(e.target.value)} />
-                <button className="w-32 h-10 bg-mb-primary-500 text-white rounded-md shadow-xl shadow-mb-secondary-500 transition-transform hover:translate-y-0.5 cursor-pointer" type="submit">Verify</button>
-            </div>
-        </form>
-    )
+  return (
+    <form
+      role="form"
+      className="m-auto h-[70vh] flex flex-col items-center justify-evenly"
+      action={async (formData: FormData) => {
+        storeUser(formData)
+        const hash = await createHash(patientName)
+        setEmail(email)
+        localStorage.setItem(`email-${hash}`, String(formData.get('email')))
+        toast.success('Email verified')
+      }}
+    >
+      <h1 className="text-4xl uppercase tracking-widest font-extralight">
+        Verify your Email
+      </h1>
+      <div
+        data-testid="email_container"
+        className="flex flex-col items-center justify-center gap-y-4"
+      >
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email"
+          defaultValue={email}
+          className="text-center w-80 h-10 outline outline-mb-primary-200 focus:outline-mb-primary-500 rounded-lg"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input type="hidden" name="patientName" defaultValue={patientName} />
+        <button
+          className="w-32 h-10 bg-mb-primary-500 text-white rounded-md shadow-xl shadow-mb-secondary-500 transition-transform hover:translate-y-0.5 cursor-pointer"
+          type="submit"
+        >
+          Verify
+        </button>
+      </div>
+    </form>
+  )
 }
 
 export default NotificationForm

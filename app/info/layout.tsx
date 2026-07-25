@@ -1,11 +1,9 @@
 import Protect from '../_components/Protect'
 
-function layout({children}:{children:React.ReactNode}) {
+function layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-          <Protect>
-              {children}
-      </Protect>
+      <Protect>{children}</Protect>
     </>
   )
 }

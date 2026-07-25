@@ -1,9 +1,7 @@
-import Navbar from "./Navbar"
+import Navbar from './Navbar'
 
 function Header() {
-    return (
-        <Navbar />
-    )
+  return <Navbar />
 }
 
 export default Header

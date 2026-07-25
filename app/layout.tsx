@@ -1,27 +1,26 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "./_components/Header";
-import UserProvider from "./_providers/UserProvider";
-import { Toaster } from "react-hot-toast";
-import { ERROR_DURATION, SUCCESS_DURATION } from "./_utils/globalConstants";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import Header from './_components/Header'
+import UserProvider from './_providers/UserProvider'
+import { Toaster } from 'react-hot-toast'
+import { ERROR_DURATION, SUCCESS_DURATION } from './_utils/globalConstants'
 
 const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+})
 
 export const metadata: Metadata = {
-  title: "Med Budget",
-  description: "A simple medical budget app to help you manage your medical expenses and keep track of your health.",
-};
+  title: 'Med Budget',
+  description:
+    'A simple medical budget app to help you manage your medical expenses and keep track of your health.',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html
@@ -30,20 +29,23 @@ export default function RootLayout({
     >
       <body>
         <UserProvider>
-            <Toaster containerStyle={{
-              padding: "5px"
-            }} toastOptions={{
+          <Toaster
+            containerStyle={{
+              padding: '5px',
+            }}
+            toastOptions={{
               success: {
-                duration: SUCCESS_DURATION
+                duration: SUCCESS_DURATION,
               },
               error: {
-                duration: ERROR_DURATION
-              }
-            }} />
-            <Header />
-            {children}
+                duration: ERROR_DURATION,
+              },
+            }}
+          />
+          <Header />
+          {children}
         </UserProvider>
       </body>
     </html>
-  );
+  )
 }
