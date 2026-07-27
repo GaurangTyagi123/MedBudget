@@ -1,3 +1,7 @@
+/**
+ * Layout for the order workflow routes.
+ */
+
 import Footer from '../_components/Footer'
 import Protect from '../_components/Protect'
 

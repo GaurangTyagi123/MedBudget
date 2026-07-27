@@ -1,12 +1,14 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+/**
+ * Guard component that blocks unauthorised access to protected routes.
+ */
+
 import { useUserContext } from '../_providers/UserProvider'
 import Link from 'next/link'
 
 function Protect({ children }: { children: React.ReactNode }) {
   const { patientName } = useUserContext()
-  const router = useRouter()
   if (patientName.length) return <>{children}</>
   else
     return (

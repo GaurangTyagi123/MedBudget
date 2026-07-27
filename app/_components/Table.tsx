@@ -1,3 +1,7 @@
+/**
+ * Table component for rendering medicine line items.
+ */
+
 import { TableProps } from '@/types'
 import { FieldValues, useForm } from 'react-hook-form'
 import {
@@ -65,7 +69,7 @@ function Table({
                     type="text"
                     value={
                       medicine[
-                        !index ? 'medicineName' : `medicineName-${index}`
+                      !index ? 'medicineName' : `medicineName-${index}`
                       ]
                     }
                     disabled={true}
@@ -86,7 +90,7 @@ function Table({
                     defaultValue={formatCurrency(
                       Number(
                         medicine[
-                          !index ? 'medicinePrice' : `medicinePrice-${index}`
+                        !index ? 'medicinePrice' : `medicinePrice-${index}`
                         ],
                       ),
                     )}
@@ -100,7 +104,7 @@ function Table({
                     type="text"
                     id={
                       medicine[
-                        !index ? 'medicineName' : `medicineName-${index}`
+                      !index ? 'medicineName' : `medicineName-${index}`
                       ] as string
                     }
                     defaultValue={1}
@@ -123,16 +127,16 @@ function Table({
                   {errors?.[
                     medicine[!index ? 'medicineName' : `medicineName-${index}`]
                   ]?.message && (
-                    <span className="text-red-500 font-bold text-xs uppercase">
-                      {String(
-                        errors?.[
-                          medicine[
+                      <span className="text-red-500 font-bold text-xs uppercase">
+                        {String(
+                          errors?.[
+                            medicine[
                             !index ? 'medicineName' : `medicineName-${index}`
-                          ]
-                        ]?.message,
-                      )}
-                    </span>
-                  )}
+                            ]
+                          ]?.message,
+                        )}
+                      </span>
+                    )}
                 </div>
               </div>
             )

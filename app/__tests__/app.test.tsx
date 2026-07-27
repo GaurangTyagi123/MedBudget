@@ -1,3 +1,7 @@
+/**
+ * Tests for the landing page and primary navigation flows.
+ */
+
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import UserEvent from '@testing-library/user-event'
@@ -6,11 +10,6 @@ import Navbar from '../_components/Navbar'
 
 const mockPush = jest.fn()
 
-// jest.mock('../_providers/UserProvider', () => ({
-//     useUserContext: () => ({
-//         patientName : "Kavita Tyagi"
-//     })
-// }))
 jest.mock('next/navigation', () => ({
   useRouter() {
     return {
@@ -27,7 +26,7 @@ jest.mock('../_providers/UserProvider', () => ({
   useUserContext: () => {
     return {
       setPatientname: jest.fn(),
-      patientName: 'Kavita Tyagi',
+      patientName: 'John Doe',
     }
   },
 }))
@@ -55,6 +54,6 @@ describe('Lander page tests', () => {
     render(<UserForm />)
     const input = screen.getByPlaceholderText("Enter patient's Name")
     await user.click(input)
-    expect(input).toHaveValue('Kavita Tyagi')
+    expect(input).toHaveValue('John Doe')
   })
 })

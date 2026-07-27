@@ -1,3 +1,6 @@
+/**
+ * Shared type declarations used across the MedBudget app.
+ */
 import { type FieldValues } from 'react-hook-form'
 
 type User = {

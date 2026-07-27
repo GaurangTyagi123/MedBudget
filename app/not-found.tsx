@@ -1,3 +1,6 @@
+/**
+ * Not-found page shown when a route does not exist.
+ */
 import Link from 'next/link'
 
 function NotFound() {

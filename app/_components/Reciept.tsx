@@ -1,3 +1,7 @@
+/**
+ * Receipt view for displaying the order summary.
+ */
+
 import { TableProps } from '@/types'
 import { createHash, formatCurrency } from '../_utils/calculationFns'
 import { storeOrderDetails } from '../_lib/actions'

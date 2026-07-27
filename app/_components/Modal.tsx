@@ -1,9 +1,17 @@
+/**
+ * Modal wrapper for displaying detail panes and summaries.
+ */
+
 import { ModalContextType, ModalWindowProps } from '@/types'
 import { createContext, useContext, useEffect } from 'react'
 import Reciept from './Reciept'
 import { createPortal } from 'react-dom'
 
 const ModalContext = createContext<ModalContextType | null>(null)
+
+/**
+ * Provides modal state to nested modal controls.
+ */
 function Modal({
   children,
   showModal,
@@ -25,6 +33,9 @@ function Modal({
   )
 }
 
+/**
+ * Opens the modal and portals the trigger content into the document body.
+ */
 function ModalOpen({ children }: { children: React.ReactNode }) {
   const { setShowModal } = useContext(ModalContext)!
   useEffect(() => {
@@ -33,6 +44,9 @@ function ModalOpen({ children }: { children: React.ReactNode }) {
   return createPortal(children, document.body)
 }
 
+/**
+ * Renders the receipt content inside the modal overlay.
+ */
 function ModalWindow({
   data,
   columns,

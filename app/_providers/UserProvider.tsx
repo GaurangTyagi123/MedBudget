@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Context provider that stores patient and order state.
+ */
+
 import { UserContextType } from '@/types'
 import { createContext, useContext, useState } from 'react'
 

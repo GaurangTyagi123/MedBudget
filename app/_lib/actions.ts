@@ -1,5 +1,9 @@
 'use server'
 
+/**
+ * Server actions for creating and updating MedBudget records.
+ */
+
 import { notFound, redirect } from 'next/navigation'
 import { supabase } from './supabase'
 

@@ -1,3 +1,7 @@
+/**
+ * Email helper used to send order reminder messages.
+ */
+
 import { Resend } from 'resend'
 import { readFileSync } from 'fs'
 import Handlebars from 'handlebars'

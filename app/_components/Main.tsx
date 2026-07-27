@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Main order workspace that prepares and reviews medicine data.
+ */
+
 import { useEffect, useRef, useState } from 'react'
 import Table from './Table'
 import Calendar from './Calendar'
@@ -49,10 +53,10 @@ function Main() {
 
   const totalCost = total
     ? total.reduce(
-        (val: number, med: { Name: string; needed: number; Price: number }) =>
-          med.Price + val,
-        0,
-      )
+      (val: number, med: { Name: string; needed: number; Price: number }) =>
+        med.Price + val,
+      0,
+    )
     : 0
   return (
     <main

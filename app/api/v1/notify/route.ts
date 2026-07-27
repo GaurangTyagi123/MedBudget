@@ -1,3 +1,7 @@
+/**
+ * API route that sends reminder notifications for due orders.
+ */
+
 import Email from '@/app/_lib/email'
 import { supabase } from '@/app/_lib/supabase'
 import { NextResponse } from 'next/server'

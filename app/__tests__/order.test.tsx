@@ -1,3 +1,7 @@
+/**
+ * Tests for the order workflow.
+ */
+
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import Main from '../_components/Main'
@@ -9,9 +13,9 @@ jest.mock('../_providers/UserProvider', () => {
   return {
     useUserContext() {
       return {
-        patientName: 'Kavita Tyagi',
+        patientName: 'John Doe',
         setPatientName: jest.fn(),
-        email: 'gaurangtyagi7@gmail.com',
+        email: 'johndoe@gmail.com',
         setEmail: jest.fn(),
         medicineData: {
           medicineName: 'crocin',

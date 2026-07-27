@@ -1,3 +1,6 @@
+/**
+ * Root layout for the MedBudget app shell.
+ */
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'

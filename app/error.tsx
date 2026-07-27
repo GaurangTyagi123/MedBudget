@@ -1,5 +1,11 @@
 'use client'
 
+/**
+ * Error boundary page shown when the app hits an unexpected failure.
+ *
+ * @returns {JSX.Element} The error screen with a recovery link.
+ */
+
 import Link from 'next/link'
 
 function error() {

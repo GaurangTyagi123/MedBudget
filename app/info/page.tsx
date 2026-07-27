@@ -1,3 +1,7 @@
+/**
+ * Page for collecting patient information.
+ */
+
 import InfoForm from '../_components/InfoForm'
 
 function page() {

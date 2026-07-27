@@ -1,3 +1,7 @@
+/**
+ * Tests for the patient information flow.
+ */
+
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
@@ -18,7 +22,7 @@ jest.mock('../_utils/calculationFns', () => ({
 jest.mock('../_providers/UserProvider', () => ({
   useUserContext: () => {
     return {
-      patientName: 'Kavita Tyagi',
+      patientName: 'John Doe',
       setPatientName: jest.fn(),
       setMedicineData: jest.fn(),
     }

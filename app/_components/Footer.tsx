@@ -1,3 +1,7 @@
+/**
+ * Footer shown across the MedBudget app.
+ */
+
 import Logo from './Logo'
 import Link from 'next/link'
 

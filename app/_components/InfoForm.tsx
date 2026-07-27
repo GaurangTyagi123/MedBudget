@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Form for collecting patient and prescription details.
+ */
+
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'

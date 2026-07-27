@@ -1,3 +1,7 @@
+/**
+ * Calendar input component for selecting dates.
+ */
+
 import { CalendarProps } from '@/types'
 import { differenceInCalendarDays } from 'date-fns'
 import { useState } from 'react'

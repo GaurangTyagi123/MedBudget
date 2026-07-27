@@ -1,3 +1,7 @@
+/**
+ * Tests for the notification workflow.
+ */
+
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import NotificationForm from '../_components/NotificationForm'
@@ -7,9 +11,9 @@ jest.mock('../_providers/UserProvider', () => {
   return {
     useUserContext() {
       return {
-        patientName: 'Kavita Tyagi',
+        patientName: 'John Doe',
         setPatientName: jest.fn(),
-        email: 'gaurangtyagi7@gmail.com',
+        email: 'johndoe@gmail.com',
         setEmail: jest.fn(),
         medicineData: {
           medicineName: 'crocin',
@@ -47,7 +51,7 @@ describe('Email form  tests', () => {
     })
     await user.click(button)
     expect(screen.getByPlaceholderText('Enter your email')).toHaveValue(
-      'gaurangtyagi7@gmail.com',
+      'johndoe@gmail.com',
     )
   })
 })

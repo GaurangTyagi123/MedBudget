@@ -1,3 +1,7 @@
+/**
+ * Medicine calculation helpers for totals and hashes.
+ */
+
 export const parseData = (medicineData: string, numCols: number) => {
   const data = JSON.parse(medicineData)
   const parsedData: Record<string, string>[] = []

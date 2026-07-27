@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Form for triggering email notifications.
+ */
+
 import toast from 'react-hot-toast'
 import { storeUser } from '../_lib/actions'
 import { useUserContext } from '../_providers/UserProvider'

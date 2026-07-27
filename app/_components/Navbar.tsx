@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Navigation bar for moving between app sections.
+ */
+
 import Link from 'next/link'
 import useLocalStorage from '../hooks/useLocalStorage'
 import Logo from './Logo'

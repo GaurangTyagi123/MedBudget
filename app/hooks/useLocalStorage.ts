@@ -12,6 +12,9 @@ export default function useLocalStorage(key: string) {
         setPatientname(localStorage.getItem(key) ?? '')
         break
       case 'email':
+        /**
+         * Hook for syncing selected fields with localStorage.
+         */
         setEmail(localStorage.getItem(key) ?? '')
         break
       default:

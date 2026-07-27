@@ -1,3 +1,7 @@
+/**
+ * Date helpers used by the MedBudget UI and workflows.
+ */
+
 export const formatDate = (date: string) => {
   return new Intl.DateTimeFormat('en-CA', {
     day: '2-digit',

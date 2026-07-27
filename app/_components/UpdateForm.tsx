@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Form for editing an existing patient record.
+ */
+
 import { useEffect } from 'react'
 import { useUserContext } from '../_providers/UserProvider'
 import InfoForm from './InfoForm'
@@ -23,7 +27,6 @@ function UpdateForm() {
     }
     getMedicineData()
   }, [setMedicineData, patientName])
-  console.log(medicineData)
   return (
     <>
       {medicineData.length > 0 ? (
@@ -35,9 +38,12 @@ function UpdateForm() {
           immutable
         />
       ) : (
-        <div className=" h-[60vh] flex flex-col items-center justify-evenly gap-y-5">
+        <div
+          data-testid="back_link"
+          className=" h-[60vh] flex flex-col items-center justify-evenly gap-y-5"
+        >
           <div className="font-extralight text-6xl text-stone-800">
-            <span> OOps no medicines found !</span>
+            <span> Oops no medicines found !</span>
           </div>
           <Link
             href={'/info'}

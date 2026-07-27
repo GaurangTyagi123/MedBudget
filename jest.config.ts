@@ -1,3 +1,6 @@
+/**
+ * Jest configuration for the MedBudget test suite.
+ */
 import type { Config } from 'jest'
 import nextJest from 'next/jest.js'
 

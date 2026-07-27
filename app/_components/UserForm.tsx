@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * Entry form used to capture the patient's name.
+ */
+
 import { createHash } from '../_utils/calculationFns'
 import { useUserContext } from '../_providers/UserProvider'
 import { useRouter } from 'next/navigation'

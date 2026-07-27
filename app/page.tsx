@@ -1,3 +1,6 @@
+/**
+ * Landing page that mounts the user form.
+ */
 import UserForm from './_components/UserForm'
 
 export default function Home() {

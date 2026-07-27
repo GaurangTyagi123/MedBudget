@@ -1,3 +1,7 @@
+/**
+ * Layout for the patient information workflow.
+ */
+
 import Protect from '../_components/Protect'
 
 function layout({ children }: { children: React.ReactNode }) {

@@ -1,3 +1,7 @@
+/**
+ * Logo mark used in the MedBudget header.
+ */
+
 import Image from 'next/image'
 import Link from 'next/link'
 
