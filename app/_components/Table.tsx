@@ -118,8 +118,8 @@ function Table({
                         valueAsNumber: true,
                         required: 'Please enter quantity per pack',
                         min: {
-                          value: 1,
-                          message: 'quantity should be greater than 0',
+                          value: 0,
+                          message: 'quantity should be greater than or equal to 0',
                         },
                       },
                     )}
